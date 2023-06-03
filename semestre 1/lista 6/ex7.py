@@ -23,3 +23,10 @@ divisores_numero = divisores(numero)
 numeroperfeito = perfectnumber(numero)
 print(divisores_numero)
 print(numeroperfeito)
+
+def main():
+    for num in range(1, 10001):
+        if perfectnumber(num):
+            print(num)
+
+main()
