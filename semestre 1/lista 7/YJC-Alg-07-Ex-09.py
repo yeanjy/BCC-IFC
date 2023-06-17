@@ -54,5 +54,38 @@ def cartela_vencedora(cartela):
 
     return False
 
-def lista():
-    lista = []
+
+def sorteio_e_verificacao():
+    a = 0
+    acumulador_lista = []  
+
+    while a < 1000:
+        minha_cartela = cartela()
+        numeros_sorteados = set()
+        acumulador = 0  
+        
+        while not cartela_vencedora(minha_cartela):
+            numero_sorteado = random.randint(1, 75)
+            numeros_sorteados.add(numero_sorteado)
+            acumulador += 1
+
+            for chave in minha_cartela:
+                for i, numero in enumerate(minha_cartela[chave]):
+                    if numero == numero_sorteado:
+                        minha_cartela[chave][i] = 0
+        
+        print("Cartela vencedora encontrada!")
+        main(minha_cartela)
+        a += 1
+
+        acumulador_lista.append(acumulador)  
+    
+    media = sum(acumulador_lista) / 10
+    minimo = min(acumulador_lista)
+    maximo = max(acumulador_lista)
+    print("Média:", media)
+    print("Mínimo:", minimo)
+    print("Máximo:", maximo)
+
+
+sorteio_e_verificacao()
