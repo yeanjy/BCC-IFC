@@ -1,0 +1,17 @@
+#border{
+    border: 20px dotted violet;
+}
+
+#border2{
+    border-top: 10px outset red;
+    border-bottom: 1px ridge blue;
+}
+
+#margin{
+    margin: 12px;
+}
+
+#padding{
+    padding: 10px 5px 3px 1px;
+}
+
