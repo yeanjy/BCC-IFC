@@ -1,6 +1,7 @@
-#include <stdio.h>
+#include <iostream>
 
-void bubble(int arr[],int n)
+template <typename T>
+void bubble(T *arr,int n)
 {
   for(int i = 0; i < n; i++)
   {
@@ -16,10 +17,11 @@ void bubble(int arr[],int n)
   }
 } 
 
-void printArray(int arr[], int n)
+template <typename T>
+void printArray(T *a, int n)
 {
   for (int i = 0; i < n; i++)
-    printf("%d\t", arr[i]);
+    printf("%d\t", a[i]);
 
   printf("\n");
 }
