@@ -24,7 +24,18 @@ public class labeledloop {
   }  
 }
 
-3) A linguagem julia é conhecida como uma linguagem de alto desempenho, desenvolvida para computação cientifica e análise de dado. Possui sintaxe dinâmica, facilitando a escrita. Possui alto desempenho, a julia consegue rodar tão rápido quanto o C. Julia possui suporte nativo a computação paralela e distribuída, o que facilita a execução de operações em vários núcleos de CPU ou em clusters de computadores, além de poder chamar funções de outras linguagens, facilitanto a integração de um sistema para o outro.
+3) A linguagem julia é conhecida como uma linguagem de alto desempenho, desenvolvida para computação cientifica e análise de dado. Possui sintaxe dinâmica, facilitando a escrita. Possui alto desempenho, a julia consegue rodar tão rápido quanto o C. Julia possui suporte nativo a computação paralela e distribuída, o que facilita a execução de operações em vários núcleos de CPU ou em clusters de computadores, além de poder chamar funções de outras linguagens, facilitanto a integração de um sistema para o outro. Exemplo em julia que chama a função bomba do python: 
+
+using Pkg
+Pkg.add("PyCall")
+using PyCall
+
+pushfirst!(PyVector(pyimport("sys")."path"), "")
+
+script = pyimport("bomba")
+
+segundos = 5
+resultado = script.bomba(segundos)
 
 4) Antigamente era em assembly, mas foi restruturado em linghagem C pelo Dennis Ritchie e Brian Kernighan.
 
