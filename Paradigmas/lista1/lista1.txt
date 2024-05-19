@@ -24,8 +24,16 @@ public class labeledloop {
   }  
 }
 
-3)bla
+3) A linguagem julia é conhecida como uma linguagem de alto desempenho, desenvolvida para computação cientifica e análise de dado. Possui sintaxe dinâmica, facilitando a escrita. Possui alto desempenho, a julia consegue rodar tão rápido quanto o C. Julia possui suporte nativo a computação paralela e distribuída, o que facilita a execução de operações em vários núcleos de CPU ou em clusters de computadores, além de poder chamar funções de outras linguagens, facilitanto a integração de um sistema para o outro.
 
 4) Antigamente era em assembly, mas foi restruturado em linghagem C pelo Dennis Ritchie e Brian Kernighan.
 
-5)
+5) É um programa que produz resultados preciso e esperado, opera em forma estável e sem travamento, conseguindo lidar com falhas ou erros. E também que contém segurança protegendo os dados do usuário contra malwares e ataques. 
+
+6) Uma linguagem com um interpretador possui mais flexibilidade e dinamismo, já que pode ser executada e alterada em tempo real. Acelera o desenvolvimento do sistema, pois não precisa compilar toda hora que faz uma mudança, além da rápida identificação de erros. Um interpretador pode ser adaptado facilmente em plataformas diferentes, permitindo que dispositivos diferentes poder rodar um programa feito por uma linguagem interpretada.
+
+7)
+( f ) Java tem tipagem estática e dinâmica.
+( f ) Python tem tipagem estática e forte.
+( v ) Python tem tipagem dinâmica e forte.
+( v ) JavaScript tem tipagem fraca e dinâmica.

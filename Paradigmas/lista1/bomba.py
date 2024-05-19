@@ -5,6 +5,3 @@ def fn(x):
 
 def bomba(n):
     print("Bommm") if n <= 0 else fn(n)
-
-
-bomba(7)
