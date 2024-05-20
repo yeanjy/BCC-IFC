@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 struct node
 {
@@ -6,34 +7,57 @@ struct node
   struct node* next;
 
   node(int val)
-  {
-    val = val;  
-    next = nullptr;
-  }
+  : val(val), next(nullptr) {}
 };
 
 struct queue
 {
   int size = 0;
   node *front;
+  node *back;
 
   queue()
-  {
-    front = nullptr;
-  }
+  :size(0), front(nullptr), back(nullptr)
+  {}
 
   bool isEmpty()
   {
-    return size>0? false : true;
+    return size == 0;
   }
 
   void enqueue(int val)
   {
+    node *aux = new node(val);
     if (!front)
     {
-      front->val = val;
-      front->next = nullptr;
-      size = 1;
+      front = aux;
+      back = aux;
     }
+    else 
+    {
+      back->next = aux;
+      back = back->next;
+    }
+    size++;
+  }
+
+  int dequeue()
+  {
+    if(isEmpty())
+      throw std::out_of_range("Queue is empty");
+
+    node *temp = front;
+    int val = front->val;
+    front = front->next;
+
+    if(!front)
+    {
+      back = nullptr;
+    }
+
+    delete temp;
+    size--;
+
+    return val;
   }
 };
