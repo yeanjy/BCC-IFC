@@ -49,15 +49,37 @@ struct queue
     node *temp = front;
     int val = front->val;
     front = front->next;
+    delete temp;
+    size--;
 
     if(!front)
     {
       back = nullptr;
     }
 
-    delete temp;
-    size--;
-
     return val;
   }
+
+  void printQueue()
+  {
+    node *tmp = front;
+    while (tmp != nullptr)
+    {
+      std::cout << tmp->val << "\n";
+      tmp = tmp->next;
+    }
+  }
 };
+
+int main()
+{
+  queue bla;
+  bla.enqueue(4);
+  bla.enqueue(6);
+  bla.enqueue(2);
+  bla.enqueue(1);
+  bla.enqueue(10);
+  bla.dequeue();
+  bla.printQueue();
+  return 0;
+}
