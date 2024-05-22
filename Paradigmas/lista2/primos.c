@@ -29,6 +29,9 @@ void drawPrimes(int arr[], int size)
       count++;
     }
   }
+
+  for (int i = 0; i < size; i++)
+    printf("%d\n", arr[i]);
 }
 
 void drawDiferentPrimes(int arr[], int size)
@@ -52,6 +55,10 @@ outerloop:
       count++;
     }
   }
+
+  for (int i = 0; i < size; i++)
+    printf("%d\n", arr[i]);
+
 }
 
 void printArray(int arr[], int size)
@@ -65,8 +72,7 @@ void printArray(int arr[], int size)
 int main()
 {
   int arr[25]; 
-  drawPrimes(arr, 25);
-  printArray(arr, 25);
+  drawDiferentPrimes(arr, 25);
 
   return 0;
 }

@@ -18,7 +18,7 @@ int quantidade(int n)
 
 int main()
 {
-  printf("%d\n", quantidade(001)); 
+  printf("%d\n", mult(4, 12)); 
 
   return 0;
 }
