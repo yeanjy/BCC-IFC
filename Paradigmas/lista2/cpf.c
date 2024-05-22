@@ -30,7 +30,7 @@ int isValidCPF(const char cpf[])
 
 int main()
 {
-  printf("%d\n", isValidCPF("01136462910"));
+  printf("%d\n", isValidCPF("abcdfghijkl"));
 
   return 0;
 }
