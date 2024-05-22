@@ -17,6 +17,22 @@ int isPrime(int n)
 
 void drawPrimes(int arr[], int size)
 {
+  srand(time(0));
+  int count = 0;
+
+  while(count < size)
+  {
+    int r = rand()%101;
+    if(isPrime(r))
+    {
+      arr[count] = r;
+      count++;
+    }
+  }
+}
+
+void drawDiferentPrimes(int arr[], int size)
+{
   srand(time(0)); 
   int count = 0;
 
