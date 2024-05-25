@@ -3,7 +3,12 @@
 int fibonacci(int n)
 {
   if (n<0)
-    return -1;
+  {
+    if (n%2 == 0)
+      return -fibonacci(-n);
+    else 
+      return fibonacci(-n);
+  }
 
   if (n == 0 || n == 1)
     return n;
@@ -34,7 +39,7 @@ int loopfibonacci(int n)
 
 int main()
 {
-  int a = fibonacci(-7);
+  int a = loopfibonacci(0);
   printf("%d\n", a);
   return 0;
 }
