@@ -2,6 +2,9 @@
 
 int fibonacci(int n)
 {
+  if (n<0)
+    return -1;
+
   if (n == 0 || n == 1)
     return n;
   return fibonacci(n-1) + fibonacci(n-2);
@@ -9,6 +12,9 @@ int fibonacci(int n)
 
 int loopfibonacci(int n)
 {
+  if (n<0)
+    return -1;
+
   int f = 1;
   int f1 = 1;
   int result = 0;
@@ -28,7 +34,7 @@ int loopfibonacci(int n)
 
 int main()
 {
-  int a = loopfibonacci(7);
+  int a = fibonacci(-7);
   printf("%d\n", a);
   return 0;
 }

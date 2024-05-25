@@ -2,6 +2,9 @@
 
 int isFriendNumber(int n, int m)
 {
+  if (n <=0 || m <= 0)
+    return 0;
+
   int sn = 1;
   int sm = 1;
 
@@ -21,7 +24,7 @@ int isFriendNumber(int n, int m)
 
 int main()
 {
-  printf("%d\n", isFriendNumber(220, 284)); 
+  printf("%d\n", isFriendNumber(1210, 1184)); 
 
   return 0;
 }
