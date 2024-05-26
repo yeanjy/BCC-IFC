@@ -24,7 +24,7 @@ public class Senha {
         else
         {
             this.tentativa++;
-            System.out.println("Senha incorreta, ainda possui " + this.tentativa + " tentativas.");
+            System.out.println("Senha incorreta, ainda possui " + (3 - this.tentativa) + " tentativas.");
         }
     }
 
@@ -44,7 +44,7 @@ public class Senha {
        else
        {
            ++tentativa;
-           System.out.println("Senha incorreta, ainda possui " + this.tentativa + " tentativas.");
+           System.out.println("Senha incorreta, ainda possui " + (3 - this.tentativa) + " tentativas.");
        }
    }
 }
