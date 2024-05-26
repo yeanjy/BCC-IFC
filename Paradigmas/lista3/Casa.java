@@ -26,13 +26,8 @@ public class Casa {
         return cor;
     }
 
-    public int quantasPortasEstaoAberta()
-    {
-        int result = 0;
-        if (porta1.estaAberta()) result++;
-        if (porta2.estaAberta()) result++;
-        if (porta3.estaAberta()) result++;
-        return result;
+    public int quantasPortasEstaoAberta() {
+        return ((porta1.estaAberta()?1:0) + (porta2.estaAberta()?1:0) + (porta3.estaAberta()? 1: 0));
     }
     public void pinta (String cor)
     {
