@@ -1,27 +1,27 @@
 package ex4;
-import ex3.porta;
+import ex3.Porta;
 
 public class Casa {
 
-    private porta porta1, porta2, porta3;
+    private Porta porta1, porta2, porta3;
     private String cor;
 
-    public Casa(porta porta1, porta porta2, porta porta3, String cor) {
+    public Casa(Porta porta1, Porta porta2, Porta porta3, String cor) {
         this.porta1 = porta1;
         this.porta2 = porta2;
         this.porta3 = porta3;
         this.cor = cor;
     }
 
-    public porta getPorta1() {
+    public Porta getPorta1() {
         return porta1;
     }
 
-    public porta getPorta2() {
+    public Porta getPorta2() {
         return porta2;
     }
 
-    public porta getPorta3() {
+    public Porta getPorta3() {
         return porta3;
     }
 

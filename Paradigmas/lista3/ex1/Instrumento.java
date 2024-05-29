@@ -1,5 +1,5 @@
 package ex1;
 
-public interface instrumento {
+public interface Instrumento {
     void tocar();
 }

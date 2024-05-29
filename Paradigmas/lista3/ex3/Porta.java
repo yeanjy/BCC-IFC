@@ -1,11 +1,11 @@
 package ex3;
 
-public class porta {
+public class Porta {
   private boolean aberta;
   private String cor;
   private double dimensaoX, dimensaoY, dimensaoZ;
 
-  porta(boolean aberta, String cor, double dimensaoX, double dimensaoY, double dimensaoZ)
+  Porta(boolean aberta, String cor, double dimensaoX, double dimensaoY, double dimensaoZ)
   {
     this.aberta = aberta;
     this.cor = cor;
