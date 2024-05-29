@@ -1,3 +1,5 @@
+package ex5;
+
 public class CalculadoraCientifica extends Calculadora{
     double potencia(double x, double y)
     {

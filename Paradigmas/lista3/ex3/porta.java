@@ -1,3 +1,5 @@
+package ex3;
+
 public class porta {
   private boolean aberta;
   private String cor;

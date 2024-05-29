@@ -1,3 +1,6 @@
+package ex4;
+import ex3.porta;
+
 public class Casa {
 
     private porta porta1, porta2, porta3;

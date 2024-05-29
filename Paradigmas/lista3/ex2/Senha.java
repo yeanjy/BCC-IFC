@@ -1,3 +1,5 @@
+package ex2;
+
 public class Senha {
     private String senha;
     private int tentativa;
