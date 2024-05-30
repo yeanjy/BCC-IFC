@@ -1,0 +1,13 @@
+a) A condição é verdadeira porque as variáveis lamp1 e lamp2 apontam para o mesmo objeto na
+memória, será exibido o 10, porque o acréscimo só é feito após a execução da linha
+
+b) Nada, pois as duas lâmpadas, por mais que tenham o mesmo estado das variáveis, são dois
+objetos separados na memória, portanto o código dentro do if não será executado.
+
+c) 11
+
+d) 10
+
+e) No código da esquerda o tipo das duas lâmpadas será modificado portanto a execução da
+segunda linha mostrará o tipo da lâmpada como "Halógena". No código da direita a primeira linha
+trocará o tipo apenas de lamp1 e nas informações gerais da lamp2 o tipo permanecerá LED.
