@@ -26,7 +26,8 @@ public class Senha {
             this.tentativa++;
             if (this.tentativa > 3) {
                 System.out.println("Senha bloqueada");
-            } else {
+            }
+            else {
                 System.out.println("Senha incorreta, ainda possui " + (4 - this.tentativa) + " tentativas.");
             }
         }
@@ -46,7 +47,8 @@ public class Senha {
             this.tentativa++;
             if (this.tentativa > 3) {
                 System.out.println("Senha bloqueada");
-            } else {
+            }
+            else {
                 System.out.println("Senha incorreta, ainda possui " + (4 - this.tentativa) + " tentativas.");
             }
         }
