@@ -1,6 +1,6 @@
 package ex1;
 
-public class Guitarra implements Instrumento{
+public class Guitarra implements Instrumento {
     @Override
     public void tocar() {
         System.out.println("Tocando a guitarra");

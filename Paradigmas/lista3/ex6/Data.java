@@ -24,12 +24,12 @@ public class Data {
     }
 
     // Método para verificar se o ano é bissexto
-    public boolean isAnoBissexto(int ano) {
+    private boolean isAnoBissexto(int ano) {
         return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
     }
 
     // Método para verificar se a data é válida
-    public boolean dataValida(int dia, int mes, int ano) {
+    private boolean dataValida(int dia, int mes, int ano) {
         if (ano < 1 || mes < 1 || mes > 12 || dia < 1) {
             return false;
         }
