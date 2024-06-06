@@ -1,0 +1,127 @@
+@startuml
+skin rose
+abstract class item{
+  + void printItem()
+  + void string toString()
+}
+
+item <|-- food : herda
+
+class food{
+  + food()
+  + void printItem override()
+  + string toString override()
+}
+
+item <|-- water : herda
+
+class water{
+  + water()
+  + void printItem override()
+  + string toString override()
+}
+
+item <|-- medkit : herda
+
+class medkit{
+  + medkit()
+  + void printItem override()
+  + string toString override()
+}
+
+item <|-- respiratoryMask : herda
+
+class respiratoryMask{
+  + respiratoryMask()
+  + void printItem override()
+  + string toString override()
+}
+
+class survivor{
+  - string name
+  - int age
+  - char gender
+  - double height
+  - double weight
+  - float hunger
+  - float thirst
+  - bool isAlive
+  - bool isHealthy
+  - int daySinceSick
+  - bool isExploring
+  - int exploringDays
+  
+  + survivor(std::string name, int age, char gender, double height,
+          double weight, int hunger = 5, int thirst = 5)
+  + void printData()
+  + void updateData(std::unordered_map<std::shared_ptr<item>, int> &inventory)
+  + void eat()
+  + void drink()
+  + void setIsDead()
+  + void setIsSick()
+  + void setIsExploring(bool n)
+  + void setExploringDays(int n)
+  + void addExploringDays()
+  + void checkIsAlive()
+  + void setHunger(int n)
+  + void setThirst(int n)
+  + void antiWarn()
+  + void goToExplore(std::unordered_map<std::shared_ptr<item>, int> &inventory, bool &exploring, bool &tookTheMask)
+  + void setDaySinceSick(int n)
+  + double updateHunger()
+  + double updateThirst()
+  + int getExploringDay()
+  + bool getIsAlive()
+  + bool getIsHealthy()
+  + bool getIsExploring()
+  + string getName()
+}
+
+class app{
+  + app()
+  + ~app() = default
+  + void run()
+  + void printDay()
+  + void printFamilyData(std::vector<survivor> &family)
+  + void updateFamilyData(std::vector<survivor> &family, std::unordered_map<std::shared_ptr<item>, int> &inventory)
+  + void checkMemberIsAlive(std::vector<survivor> &family)
+  + void checkEndOfGame(std::vector<survivor> &family, std::unordered_map<std::shared_ptr<item>, int> &inventory)
+  + void consumeEvents(std::unordered_map<std::shared_ptr<item>, int> &inventory, std::vector<survivor> &family, std::vector<FunctionPointer> &events)
+  + void checkExplore(std::unordered_map<std::shared_ptr<item>, int> &inventory, std::vector<survivor> &family, bool &exploring, bool &tookTheMask)
+  + void printInventory(std::unordered_map<std::shared_ptr<item>, int> &inventory)
+  + void updatePorcentage()
+  + void initInventory(std::unordered_map<std::shared_ptr<item>, int> &inventory)
+  + std::string toStringInventory(std::unordered_map<std::shared_ptr<item>, int> &inventory)
+  + std::vector<std::string> ocurredEvent
+  + bool checkFamilyHealth(std::vector<survivor> &family)
+  + bool isRun
+  + double getSickPorcentage
+  + double getLostFoodPorcentage
+  + double getLostWaterPorcentage
+  + double getLostMedkitPorcentage
+  + double armyHelpPorcentage
+  + unsigned int dayCounter
+}
+
+app -- item : < possui
+app -- survivor : < possui
+
+struct events{
+  + bool verifyEvent(double porcentage)
+  + void getSick(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void getFood(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void getWater(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void getMedkit(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void lostMedkit(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void lostFood(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void lostWater(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void armyHelp(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
+  + void exploreGain(std::unordered_map<std::shared_ptr<item>, int> &inventory)
+  + std::shared_ptr<item> findMedkit(std::unordered_map<std::shared_ptr<item>, int>& inventory)
+  + std::shared_ptr<item> findWater(std::unordered_map<std::shared_ptr<item>, int>& inventory)
+  + std::shared_ptr<item> findFood(std::unordered_map<std::shared_ptr<item>, int>& inventory)
+  + std::shared_ptr<item> findMask(std::unordered_map<std::shared_ptr<item>, int>& inventory)
+}
+
+app -- events : < possui
+@enduml
