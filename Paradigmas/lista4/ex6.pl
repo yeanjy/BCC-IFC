@@ -18,13 +18,13 @@ irmao(X, Y) :-
   pai(Z, X),
   pai(Z, Y),
   sexo(X, masculino),
-  X \= Y.
+  X \== Y.
 
 irma(X, Y) :- 
   pai(Z, X),
   pai(Z, Y),
   sexo(X, feminino),
-  X \= Y.
+  X \== Y.
 
 neto(X, Y) :- 
   pai(Z, X),
