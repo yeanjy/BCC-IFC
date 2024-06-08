@@ -101,6 +101,7 @@ class app{
   + double getLostMedkitPorcentage
   + double armyHelpPorcentage
   + unsigned int dayCounter
+  + double freakOutPorcentage
 }
 
 app -- item : < possui
@@ -121,6 +122,7 @@ struct events{
   + std::shared_ptr<item> findWater(std::unordered_map<std::shared_ptr<item>, int>& inventory)
   + std::shared_ptr<item> findFood(std::unordered_map<std::shared_ptr<item>, int>& inventory)
   + std::shared_ptr<item> findMask(std::unordered_map<std::shared_ptr<item>, int>& inventory)
+  + void freakOut(survivor &s, std::unordered_map<std::shared_ptr<item>, int> &inventory, app &a)
 }
 
 app -- events : < possui
