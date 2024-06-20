@@ -61,7 +61,7 @@ class survivor{
   + void setIsSick()
   + void setIsExploring(bool n)
   + void setExploringDays(int n)
-  + void addExploringDays()
+  + void increaseExploringDays()
   + void checkIsAlive()
   + void setHunger(int n)
   + void setThirst(int n)
@@ -81,9 +81,8 @@ class survivor{
 class app{
   +app()
   +~app() = default
-  +void run(std::vector<survivor> &family, std::vector<FunctionPointer> &events, 
-              std::unordered_map<std::shared_ptr<item>, int> &inventory,int eat_e, int drink_e, int explore_e,
-              int food_q, int water_q, int mask_q, int medkit_q)
+  +void run(std::vector<survivor> &family, std::vector<FunctionPointer> &events, std::unordered_map<std::shared_ptr<item>, int> &inventory,
+            int eat_e, int drink_e, int explore_e, int food_q, int water_q, int mask_q, int medkit_q)
   +void printDay() 
   +void printFamilyData(std::vector<survivor> &family)
   +void updateFamilyData(std::vector<survivor> &family, std::unordered_map<std::shared_ptr<item>, int> &inventory, int eat_e, int drink_e)
