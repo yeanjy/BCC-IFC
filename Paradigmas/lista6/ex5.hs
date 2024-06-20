@@ -1,9 +1,3 @@
-maior (x, y, z)
-  | x >= y && x >= z = x
-  | y >= x && y >= z = y
-  | otherwise = z
+maior (x, y, z) = max x (max y z)
 
-menor (x, y, z)
-  | x <= y && x <= z = x
-  | y <= x && y <= z = y
-  | otherwise = z
+menor (x, y, z) = min x (min y z)
