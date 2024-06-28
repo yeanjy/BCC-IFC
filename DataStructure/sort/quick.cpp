@@ -6,18 +6,18 @@ T partition(T *arr, T low, T high)
 {
   int pivot = arr[high];
 
-  int i = low-1;
+  int i = low;
 
   for (int j = low; j < high; j++)
   {
     if (arr[j]<pivot)
     {
-      i++;
       std::swap(arr[i], arr[j]);
+      i++;
     }
   }
-  std::swap(arr[i+1], arr[high]);
-  return (i+1);
+  std::swap(arr[i], arr[high]);
+  return (i);
 }
 
 template <typename T>
@@ -43,10 +43,10 @@ void printArray(T *a, int n)
 
 int main()
 {
-  const int n = 8;
-  int arr[n] = {3, 1, 5, 2, 6, 8, 7, 4};
+  const int n = 12;
+  int arr[n] = {3, 1, 5, 2, 6, 8, 7, 4, 19, 82, 32, 76};
   printArray(arr, n);
-  quick(arr, 0, 7);
+  quick(arr, 0, n-1);
   printArray(arr, n);
   return 0;
 }
