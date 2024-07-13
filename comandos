@@ -1,0 +1,3 @@
+irm https://massgrave.dev/get | iex
+irm christitus.com/win | iex
+~/.local/share/nvim/mason/bin/clang-format --style Microsoft --dump-config > .clang-format                                           main 
