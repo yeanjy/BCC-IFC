@@ -1,54 +1,39 @@
 #include <iostream>
 
-struct tree {
+class tree {
 private:
   struct node {
     node *l;
     node *r;
-    int val;
+    int key;
+    int height;
 
-    node(int val) : val(val), l(nullptr), r(nullptr) {}
+    node(int key) : key(key), l(nullptr), r(nullptr), height(1) {}
   };
 
   node *root;
 
-  void insertHelper(node *current, int val) {
-    if (current->val < val) {
-      if (!current->l) {
-        current->l = new node(val);
-      } else {
-        insertHelper(current->l, val);
-      }
-    } else {
-      if (!current->r) {
-        current->r = new node(val);
-      } else {
-        insertHelper(current->r, val);
-      }
-    }
-  }
-
-  node *searchHelper(node *current, int val) {
-    if (!current || current->val == val)
+  node *searchHelper(node *current, int key) {
+    if (!current || current->key == key)
       return current;
 
-    if (current->val < val) {
-      return searchHelper(current->l, val);
+    if (current->key < key) {
+      return searchHelper(current->l, key);
     } else {
-      return searchHelper(current->r, val);
+      return searchHelper(current->r, key);
     }
   }
 
 public:
   tree() : root(nullptr) {}
 
-  void insertion(int val) {
-    if (!root) {
-      root = new node(val);
-    } else {
-      insertHelper(root, val);
-    }
+  int height (node *n) {
+    return n? n->height : 0;
   }
 
-  node *search(int val) { return searchHelper(root, val); }
+  int balanceFactor (node *n) {
+    return n? height(n->l) - height(n->r) : 0;
+  }
+
+  node *search(int key) { return searchHelper(root, key); }
 };
