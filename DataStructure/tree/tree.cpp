@@ -8,7 +8,7 @@ private:
     int key;
     int height;
 
-    node(int key) : key(key), l(nullptr), r(nullptr), height(1) {}
+    node(int key) : key(key), l(nullptr), r(nullptr), height(0) {}
   };
 
   node *root;
@@ -40,7 +40,7 @@ node *leftRotate (node *n) {
 }
 
 int height (node *n) {
-  return n? n->height : 0;
+  return n? n->height : -1;
 }
 
 int balanceFactor (node *n) {
