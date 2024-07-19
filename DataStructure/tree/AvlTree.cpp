@@ -56,13 +56,66 @@ private:
         return child;
     }
 
+    node *rotate(node *n) {
+        int _balanceFactor = balanceFactor(n);
+
+        if(_balanceFactor > 1) {
+            if (balanceFactor(n->left) >= 0) {
+                return rightRotate(n);
+            }
+            else {
+                n->left = leftRotate(n->left);
+                return rightRotate(n);
+            }
+        }
+
+        if (_balanceFactor < -1) {
+            if(balanceFactor(n->right) <= 0) {
+                return leftRotate(n);
+            }
+            else {
+                n->right = rightRotate(n->right);
+                return leftRotate(n);
+            }
+        }
+        return n;
+    }
+
+    node *insertHelper(node *n, int val) {
+        if (!n)
+            return new node(val);
+
+        if (val < n->key)
+            n->left = insertHelper(n->left, val);
+        else if (val > n->key)
+            n->right = insertHelper(n->right, val);
+        else 
+            return n;
+
+        updateHeight(n);
+        n = rotate(n);
+
+        return n;
+    }
+
 public:
     AvlTree()
     :root(nullptr) {}
 
+    void insert(int val) {
+        root = insertHelper(root, val);
+    }
+
 };
 
 int main() {
-
+    AvlTree t;
+    t.insert(4);
+    t.insert(1);
+    t.insert(3);
+    t.insert(443);
+    t.insert(12312);
+    t.insert(95342);
+    t.insert(312);
     return 0;
 }
