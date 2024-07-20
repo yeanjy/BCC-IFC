@@ -45,4 +45,15 @@ public:
   void insertRec(int val) { root = insertHelper(root, val); }
 };
 
-int main() { return 0; }
+int main() {
+  tree t;
+
+  t.insertRec(5);
+  t.insertRec(3);
+  t.insertRec(7);
+  t.insertRec(2);
+  t.insertRec(4);
+  t.insertRec(6);
+  t.insertRec(8);
+  return 0;
+}
