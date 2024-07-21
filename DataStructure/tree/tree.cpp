@@ -11,7 +11,6 @@ struct node {
 };
 
 struct tree {
-private:
   node *root;
 
   node *insertHelper(node *n, int val) {
@@ -85,13 +84,19 @@ private:
     }
   }
 
-public:
   tree() : root(nullptr) {};
 
   void insertRec(int val) { root = insertHelper(root, val); }
   void insert(int val) { root = insertHelperLoop(root, val); }
   void printInOrder() { printInOrderHelper(root); }
 };
+
+void printNode(node *n) {
+  if (n)
+    std::cout << "node founded " << n->key << std::endl;
+  else
+    std::cout << "Node not found" << std::endl;
+}
 
 int main() {
   tree t;
@@ -108,6 +113,8 @@ int main() {
   t.insert(41);
   t.insert(39);
   t.printInOrder();
+  node *n = t.searchRec(t.root, 39);
+  printNode(n);
 
   return 0;
 }
