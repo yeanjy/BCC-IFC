@@ -89,6 +89,52 @@ struct tree {
   void insertRec(int val) { root = insertHelper(root, val); }
   void insert(int val) { root = insertHelperLoop(root, val); }
   void printInOrder() { printInOrderHelper(root); }
+
+  void remove(int key) {
+    if (!root)
+      return;
+
+    node *cur = root, *pre = nullptr;
+
+    while (cur) {
+      if (cur->key == key)
+        break;
+      
+      pre = cur;
+
+      if (cur->key < key)
+        cur = cur->right;
+      else 
+        cur = cur->left;
+    }
+
+    if (!cur)
+      return;
+
+    if (cur->left == nullptr || cur->right == nullptr) {
+      node *child = cur->left != nullptr ? cur->left : cur->right;
+
+      if (cur != root)
+        if (pre->left == cur)
+          pre->left = child;
+        else 
+          pre->right = child;
+      else 
+        root = child;
+
+      delete cur;
+    }
+    else {
+      node *tmp = cur->right;
+      
+      while (tmp->left) 
+        tmp = tmp->left;
+
+      int tmpVal = tmp->key;
+      remove(tmp->key);
+      cur->key = tmpVal;
+    }
+  }
 };
 
 void printNode(node *n) {
@@ -112,6 +158,8 @@ int main() {
   t.insert(29);
   t.insert(41);
   t.insert(39);
+  t.remove(41);
+  t.remove(19);
   t.printInOrder();
   node *n = t.searchRec(t.root, 39);
   printNode(n);
