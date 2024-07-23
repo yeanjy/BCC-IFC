@@ -86,9 +86,23 @@ struct tree {
 
   tree() : root(nullptr) {};
 
+  int max (int a, int b) {
+    return a >= b? a: b;
+  }
+
   void insertRec(int val) { root = insertHelper(root, val); }
   void insert(int val) { root = insertHelperLoop(root, val); }
   void printInOrder() { printInOrderHelper(root); }
+
+  int height(node *n) {
+    if (!n)
+      return 0;
+    return max(height(n->left), height(n->right)) + 1;
+  }
+
+  int treeHeight() {
+    return height(root);
+  }
 
   void remove(int key) {
     if (!root)
@@ -135,6 +149,50 @@ struct tree {
       cur->key = tmpVal;
     }
   }
+
+  int max() {
+    if (!root)
+      return INT_MIN;
+
+    node *cur = root;
+
+    while (cur->right != nullptr)
+      cur = cur->right;
+
+    return cur->key;
+  }
+
+  int maxRecHelper(node *n) {
+    if (!n->right)
+      return n->key;
+    return maxRecHelper(n->right);
+  }
+
+  int maxRec() {
+    return maxRecHelper(root);
+  }
+
+  int minRecHelper(node *n) {
+    if (!n->left)
+      return n->key;
+    return maxRecHelper(n->left);
+  }
+
+  int minRec() {
+    return minRecHelper(root);
+  }
+
+  int min() {
+    if (!root)
+      return INT_MIN;
+
+    node *cur = root;
+
+    while (cur->left != nullptr)
+      cur = cur->left;
+
+    return cur->key;
+  }
 };
 
 void printNode(node *n) {
@@ -147,22 +205,12 @@ void printNode(node *n) {
 int main() {
   tree t;
 
-  t.insertRec(5);
-  t.insertRec(3);
-  t.insertRec(7);
-  t.insertRec(2);
-  t.insertRec(4);
-  t.insertRec(6);
-  t.insertRec(8);
-  t.insert(19);
-  t.insert(29);
-  t.insert(41);
-  t.insert(39);
-  t.remove(41);
-  t.remove(19);
+  for (int i = 0; i < 100000; i++) {
+    t.insert(rand());
+  }
+    
   t.printInOrder();
-  node *n = t.searchRec(t.root, 39);
-  printNode(n);
+  std::cout << t.minRec() << std::endl;
 
   return 0;
 }
