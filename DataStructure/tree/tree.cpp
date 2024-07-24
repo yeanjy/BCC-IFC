@@ -163,6 +163,9 @@ struct tree {
   }
 
   int maxRecHelper(node *n) {
+    if (!n)
+      return INT_MIN;
+
     if (!n->right)
       return n->key;
     return maxRecHelper(n->right);
@@ -173,6 +176,9 @@ struct tree {
   }
 
   int minRecHelper(node *n) {
+    if  (!n)
+      return INT_MIN;
+
     if (!n->left)
       return n->key;
     return maxRecHelper(n->left);
