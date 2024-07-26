@@ -64,15 +64,21 @@ struct tree {
   }
 
   node *search(node *n, int val) {
+    if (!n)
+      return nullptr;
+
     node *aux = n;
+
     while (aux) {
       if (aux->key == val)
         return aux;
+
       if (val > aux->key) {
         aux = aux->right;
       } else
         aux = aux->left;
     }
+
     return aux;
   }
 
@@ -198,6 +204,26 @@ struct tree {
       cur = cur->left;
 
     return cur->key;
+  }
+
+  node *rigthRotate(node *n) {
+    node *child  = n->left;
+    node *grandchild = child->right;
+
+    child->right = n;
+    n->left = grandchild;
+
+    return child;
+  }
+
+  node *leftRotate(node *n) {
+    node *child = n->right;
+    node *grandchild = child->left;
+
+    child->left = n;
+    n->right = grandchild;
+
+    return child;
   }
 };
 
