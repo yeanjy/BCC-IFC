@@ -1,7 +1,7 @@
 
 import random
 
-CAPACIDADE = 5  # capacidade da mochila
+CAPACIDADE = 5  
 
 ITENS = [
     (6,1),
@@ -12,10 +12,9 @@ ITENS = [
 
 NUM_ITENS = len(ITENS)
 
-POPULACAO_TAM = 30
+POPULACAO_TAM = 3
 GERACOES = 20
-TAXA_MUTACAO = 0.05
-TAXA_CRUZAMENTO = 0.8
+TAXA_MUTACAO = 0.5
 TORNEIO_TAM = 3
 
 def gerar_individuo():
